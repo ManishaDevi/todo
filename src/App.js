@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     setItems(allItems);
-  }, []);
+  }, [allItems]);
 
   const updateItem = (index, newItem) => {
     if (newItem && !newItem.name) return;
