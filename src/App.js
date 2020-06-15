@@ -17,7 +17,7 @@ function App() {
   const updateItem = (index, newItem) => {
     if (newItem && !newItem.name) return;
     let newItems = JSON.parse(JSON.stringify(items));
-    if (index != undefined) newItems[index] = newItem;
+    if (index !== undefined) newItems[index] = newItem;
     else {
       newItems.push(newItem);
     }
@@ -29,10 +29,6 @@ function App() {
     if (!searchQuery) return setItems(allItems);
     const reg = new RegExp(searchQuery, "gi");
     setItems(items.filter((i) => i.name.match(reg)));
-  };
-
-  const edit = (i, item) => {
-    item.isBlur = true;
   };
 
   return (
